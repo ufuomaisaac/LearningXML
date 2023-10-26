@@ -15,14 +15,23 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/verticalRecyclerView"
+        android:id="@+id/horizontalRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/profile_message"
-        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/editText"
         app:layout_constraintTop_toBottomOf="@id/editText"
+        tools:listitem="@layout/profile_message" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/verticalRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        tools:listitem="@layout/profile_message"
+        app:layout_constraintTop_toBottomOf="@id/horizontalRecyclerView"
         app:layout_constraintStart_toStartOf="@id/editText"
         app:layout_constraintEnd_toEndOf="@id/editText"/>
+
+
 
 
 

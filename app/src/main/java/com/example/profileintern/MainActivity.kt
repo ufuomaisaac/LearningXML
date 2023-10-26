@@ -40,8 +40,13 @@ class MainActivity : AppCompatActivity() {
             ProfileData(firstName = "isaac isaac", lastMessage = "I am doing fine ee"),
         )
 
-        binding.verticalRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
+        binding.horizontalRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
         adapter = ProfileAdapter(dataSet = dataset)
+        binding.horizontalRecyclerView.adapter = adapter
+
+
+        binding.verticalRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL , false)
+        //adapter = ProfileAdapter(dataSet = dataset)
         binding.verticalRecyclerView.adapter = adapter
 
         //adapter.updateList(dataset)
