@@ -2,6 +2,9 @@ package com.example.profileintern
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.HorizontalScrollView
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.profileintern.databinding.ActivityMainBinding
 
@@ -14,10 +17,33 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = ProfileAdapter()
-        binding.recyclerView.adapter = adapter
+        var dataset = listOf<ProfileData>(
+            ProfileData( firstName = "Ufuoma Isaac", lastMessage = "I am doing good"),
+            ProfileData(firstName = "isaac isaac", lastMessage = "I am doing fine ee"),
+            ProfileData( firstName = "Ufuoma Isaac", lastMessage = "I am doing good"),
+            ProfileData(firstName = "isaac isaac", lastMessage = "I am doing fine ee"),
+            ProfileData( firstName = "Ufuoma Isaac", lastMessage = "I am doing good"),
+            ProfileData(firstName = "isaac isaac", lastMessage = "I am doing fine ee"),
+            ProfileData( firstName = "Ufuoma Isaac", lastMessage = "I am doing good"),
+            ProfileData(firstName = "isaac isaac", lastMessage = "I am doing fine ee"),
+            ProfileData( firstName = "Ufuoma Isaac", lastMessage = "I am doing good"),
+            ProfileData(firstName = "isaac isaac", lastMessage = "I am doing fine ee"),
+            ProfileData( firstName = "Ufuoma Isaac", lastMessage = "I am doing good"),
+            ProfileData(firstName = "isaac isaac", lastMessage = "I am doing fine ee"),
+            ProfileData( firstName = "Ufuoma Isaac", lastMessage = "I am doing good"),
+            ProfileData(firstName = "isaac isaac", lastMessage = "I am doing fine ee"),
+            ProfileData( firstName = "Ufuoma Isaac", lastMessage = "I am doing good"),
+            ProfileData(firstName = "isaac isaac", lastMessage = "I am doing fine ee"),
+            ProfileData( firstName = "Ufuoma Isaac", lastMessage = "I am doing good"),
+            ProfileData(firstName = "isaac isaac", lastMessage = "I am doing fine ee"),
+            ProfileData( firstName = "Ufuoma Isaac", lastMessage = "I am doing good"),
+            ProfileData(firstName = "isaac isaac", lastMessage = "I am doing fine ee"),
+        )
 
+        binding.verticalRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
+        adapter = ProfileAdapter(dataSet = dataset)
+        binding.verticalRecyclerView.adapter = adapter
 
+        //adapter.updateList(dataset)
     }
 }
